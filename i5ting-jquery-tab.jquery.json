@@ -1,0 +1,28 @@
+{
+  "name": "i5ting-jquery-tab",
+  "title": "i5ting-jquery-tab",
+  "description": "a copy of iciba.com tab implement",
+  "version": "0.1.0",
+  "homepage": "https://github.com/i5ting/i5ting-jquery-tab",
+  "author": {
+    "name": "i5ting",
+    "email": "shiren1118@126.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i5ting/i5ting-jquery-tab.git"
+  },
+  "bugs": {
+    "url": "https://github.com/i5ting/i5ting-jquery-tab/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/i5ting/i5ting-jquery-tab/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
