@@ -26,5 +26,7 @@ _(Coming soon)_
 ## Examples
 _(Coming soon)_
 
+see example dir.
+
 ## Release History
 _(Nothing yet)_
