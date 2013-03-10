@@ -6,7 +6,14 @@
 <style type="text/css">
 	*{margin:0; padding:0;}
 	
-	
+	.i5ting_tab_list{
+		border-bottom: 1px solid #e7e7e7;
+		padding: 0;
+		background: none;
+		border-bottom: 1px solid #e7e7e7;
+/*		height: 31px;*/
+/*		margin-bottom: 10px;*/
+	}
 	.i5ting_tab_list a{
 		text-decoration:none; 
 		color:#333;
@@ -55,7 +62,7 @@
 		width:100%; 
 		border:1px solid #e7e7e7; 
 		border-top:none; 
-		border-top:1px solid #f4f4f4; 
+/*		border-top:1px solid #f4f4f4; */
 	}
  
 	.i5ting_tab_content_item{
@@ -67,6 +74,26 @@
 	}
 	
 	
+	.up, .down {
+		margin-right: 0;
+		width: 14px;
+		float: right;
+	}
+	
+	.up {
+		background: url(../src/images/bg_index2.gif) -0px -0px no-repeat;
+	}
+	
+	.down{
+		background: url(../src/images/bg_index2.gif) -0px -11px no-repeat;
+	}
+	
+	.up, .down {
+		width: 18px;
+		height: 16px;
+		margin: 11px 1px 0 0;
+	}
+	
 </style>
 
 </head>
@@ -76,6 +103,7 @@
  	   <br/><br/><br/><br/>
 	   
 	   <div class='i5ting_tab_list'>
+		    <a href="javascript:;" class="up" id="up_sen"></a>
 	        <ul>
 	            <li class="current">
 	            	<a href="#">张婷作品</a>	
@@ -120,6 +148,7 @@
  	   <br/><br/><br/><br/>
 	   
 	   <div class='i5ting_tab_list'>
+		    <a href="javascript:;" class="down" id="up_sen"></a>
 	        <ul>
 	            <li class="current">
 	            	<a href="#">张婷作品</a>	

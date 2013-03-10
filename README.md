@@ -69,5 +69,16 @@ _(Coming soon)_
 
 see example dir.
 
+@see index2.html
+
 ## Release History
 _(Nothing yet)_
+
+## Refference
+
+- http://www.jb51.net/tools/cssyasuo.shtml
+
+
+
+ http://www.keakon.net/2011/08/03/优化UITableView性能
+ http://rd.189works.com/article-103536-1.html
