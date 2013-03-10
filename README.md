@@ -64,6 +64,47 @@ jQuery(function($) {
 ## Documentation
 _(Coming soon)_
 
+### 用法
+固定高度显示
+
+```javascript
+$('.wrap1').i5ting_jquery_tab({
+	fix_height :'200px'
+});
+
+```
+
+隐藏tab正文区域的按钮
+
+```javascript
+$('.wrap2').i5ting_jquery_tab({
+	is_tab_content_btn_show:false
+});
+
+```
+
+
+### 配置项说明
+- 是否固定显示高度
+
+```
+fix_height :'200px'
+```
+
+如果配置了fix_height属性，则tab将以此高度，固定显示高度。
+
+默认是自动适应高度的。
+
+- 是否显示tab正文区域是否隐藏按钮
+
+```
+is_tab_content_btn_show :fase
+```
+
+如果配置了is_tab_content_btn_show=false属性，则tab不显示隐藏tab正文区域的按钮。
+
+默认：is_tab_content_btn_show=true
+
 ## Examples
 _(Coming soon)_
 

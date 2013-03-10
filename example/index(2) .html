@@ -6,139 +6,79 @@
 <style type="text/css">
 	*{margin:0; padding:0;}
 	
-	.i5ting_tab_list{
-		border-bottom: 1px solid #e7e7e7;
-		padding: 0;
-		background: none;
-		border-bottom: 1px solid #e7e7e7;
-/*		height: 31px;*/
-/*		margin-bottom: 10px;*/
-	}
-	.i5ting_tab_list a{
-		text-decoration:none; 
-		color:#333;
-	}
+
 	
 	.wrap1{width:600px; margin:0 auto;}
 	.wrap2{width:600px; margin:0 auto;}
  
- 	.i5ting_tab_list ul,li{
-		list-style-type:none;
-	}
-	.i5ting_tab_list ul{
-		overflow:hidden; 
-		margin:10px 10px 0 0; 
-		width:530px; 
-		height:30px;
-		line-height:30px; 
-		position:relative; 
-		top:1px; 
-		color:#333;
-	}
-	.i5ting_tab_list li{
-		float:left; 
-		width:100px;  
-		border-left:1px solid #e7e7e7; 
-		border-top:1px solid #e7e7e7; 
-		border-bottom:none; 
-		text-align:center; 
-		cursor:pointer; 
-		background:#f4f4f4; 
-		margin-top:1px;
-	}
-	.i5ting_tab_list li.current{
-		background:#fff; 
-		border-top:2px solid #2f82df;
-		padding-top:1px; 
-		height:32px; 
-		margin-top:0;
-		font-weight:bold;
-	}
-	.i5ting_tab_list li.last{margin-right:0; border-right:1px solid #e7e7e7;}
-	.i5ting_tab_list li.over{
-		background:#fff;
-	}
-	
-	.i5ting_tab_content{
-		width:100%; 
-		border:1px solid #e7e7e7; 
-		border-top:none; 
-/*		border-top:1px solid #f4f4f4; */
-	}
- 
-	.i5ting_tab_content_item{
-		display:none;
-	}
-	
-	.i5ting_tab_content_item.current_content{
-		display:block;
-	}
-	
-	
-	.up, .down {
-		margin-right: 0;
-		width: 14px;
-		float: right;
-	}
-	
-	.up {
-		background: url(../src/images/bg_index2.gif) -0px -0px no-repeat;
-	}
-	
-	.down{
-		background: url(../src/images/bg_index2.gif) -0px -11px no-repeat;
-	}
-	
-	.up, .down {
-		width: 18px;
-		height: 16px;
-		margin: 11px 1px 0 0;
-	}
 	
 </style>
-
+<link href="../src/css/i5ting-jquery-tab.css" media="screen" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 	<div class="wrap1">
  	   <br/><br/><br/><br/>
 	   
-	   <div class='i5ting_tab_list'>
-		     
+	   <div class='i5ting_tab_list'> 
 	        <ul>
 	            <li class="current">
-	            	<a href="#">张婷作品</a>	
+	            	<a href="#">tab说明</a>	
 	            </li>
 	            <li>
-	            	<a href="#">90年</a>
+	            	<a href="#">特性</a>
 	            </li>
 	            <li>
-	            	<a href="#">大4</a>
+	            	<a href="#">开源协议</a>
 	            </li>
 	            <li>
-	            	<a href="#">未婚</a>
+	            	<a href="#">源码</a>
 	            </li>
 	            <li class="last">
-	            	<a href="#">有男朋友</a>
+	            	<a href="#">张婷作品</a>
 	            </li>
 	        </ul>
 		</div>
         <div class="i5ting_tab_content">
             <div class="i5ting_tab_content_item current_content">
-				1.This is the news part. We will give you the latest news around the world on pretty hearts and the beautiful scenry. 
+				<br/>
+				i5ting-jquery-tab
+				<br/><br/>
+				<p>说明</p>
+				<ol>
+					<li>1. a copy of iciba.com tab implement </li>
+					<li>2. 基于jQuery插件机制</li>
+					<li>3. 可配置</li>
+				</ol>
+				
+				
 			</div>
             <div class="i5ting_tab_content_item">
-				2.<p>The skill part.</p>
-				<p>The skill part.</p>
+				<br/>
+				i5ting-jquery-tab
+				<br/><br/>
+				<p>特性</p>
+				<ol>
+					<li>1. jquery插件，支持配置</li>
+					<li>2. 显示隐藏按钮，可配置</li>
+				</ol>
+				
 			</div>
             <div class="i5ting_tab_content_item">
-				3.We have a large number of art works. We are so famous and popular that many people come here to watch our show from far distance.
+				<br/>
+				apache 2.0
 			</div>
             <div class="i5ting_tab_content_item">
-				4.A great team is very important to create a brilliant career. We are not alone ,we are a team, we can share all the dificulies.
+				<br/>
+				源码位于
+				<br/>
+				https://github.com/i5ting/i5ting-jquery-tab.git
 			</div>
             <div class="i5ting_tab_content_item">
-				5.If you have any question about us or our works please leave a message, we will repond at once.
+				<br/>
+				作者：张婷
+				<br/>
+				我女朋友，css和js有很多是她写，重构部分是我写的
 			</div>
         </div>
 	 
@@ -148,53 +88,71 @@
 	<div class="wrap2">
  	   <br/><br/><br/><br/>
 	   
-	   <div class='i5ting_tab_list'>
+	   <div class='i5ting_tab_list'> 
 	        <ul>
 	            <li class="current">
-	            	<a href="#">张婷作品</a>	
+	            	<a href="#">tab说明</a>	
 	            </li>
 	            <li>
-	            	<a href="#">jquery - tab</a>
+	            	<a href="#">特性</a>
 	            </li>
 	            <li>
-	            	<a href="#">善良</a>
+	            	<a href="#">开源协议</a>
 	            </li>
 	            <li>
-	            	<a href="#">善解人意</a>
+	            	<a href="#">源码</a>
 	            </li>
 	            <li class="last">
-	            	<a href="#">冰雪聪明</a>
+	            	<a href="#">张婷作品</a>
 	            </li>
 	        </ul>
 		</div>
         <div class="i5ting_tab_content">
             <div class="i5ting_tab_content_item current_content">
-				1.This is the news part. We will give you the latest news around the world on pretty hearts and the beautiful scenry. 
+				<br/>
+				i5ting-jquery-tab
+				<br/><br/>
+				<p>说明</p>
+				<ol>
+					<li>1. a copy of iciba.com tab implement </li>
+					<li>2. 基于jQuery插件机制</li>
+					<li>3. 可配置</li>
+				</ol>
+				
+				
 			</div>
             <div class="i5ting_tab_content_item">
-				2.<p>The skill part.</p>
-				<p>The skill part.</p>
+				<br/>
+				i5ting-jquery-tab
+				<br/><br/>
+				<p>特性</p>
+				<ol>
+					<li>1. jquery插件，支持配置</li>
+					<li>2. 显示隐藏按钮，可配置</li>
+				</ol>
+				
 			</div>
             <div class="i5ting_tab_content_item">
-				3.We have a large number of art works. We are so famous and popular that many people come here to watch our show from far distance.
+				<br/>
+				apache 2.0
 			</div>
             <div class="i5ting_tab_content_item">
-				4.A great team is very important to create a brilliant career. We are not alone ,we are a team, we can share all the dificulies.
+				<br/>
+				源码位于
+				<br/>
+				https://github.com/i5ting/i5ting-jquery-tab.git
 			</div>
             <div class="i5ting_tab_content_item">
-				5.If you have any question about us or our works please leave a message, we will repond at once.
+				<br/>
+				作者：张婷
+				<br/>
+				我女朋友，css和js有很多是她写，重构部分是我写的
 			</div>
         </div>
 	 
     </div>
 	<br/><br/><br/>
-	<div class="wrap1">
-		<h3>特性</h3>
-		<ol>
-			<li>1. jquery插件，支持配置</li>
-			<li>2. 显示隐藏按钮，可配置</li>
-		</ol>
-	</div>
+	 
 </body>
 </html>
 
