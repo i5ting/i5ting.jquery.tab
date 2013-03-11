@@ -61,19 +61,60 @@
 		  opts.current_tab_content = $('.i5ting_tab_content');
 			//$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index );
 			// container = $(this);
-
 			
-			//tab 头点击处理
-	  	$(container).find('.i5ting_tab_list li').click(function(e){
-				opts.current_tab_index = $(this).prevAll().length;
+			
+			//$(container).find('.i5ting_tab_list li').eq(opts.current_tab_index).addClass('current');
+			$(container).find('.i5ting_tab_list li').last().addClass('last');
+			
+			$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+			
+ 
+		
+			// switch(n)
+	// 		{
+	// 		   case 1:
+	// 		     执行代码块 1
+	// 		     break
+	// 		   case 2:
+	// 		     执行代码块 2
+	// 		     break
+	// 		   default:
+	// 		     如果n即不是1也不是2，则执行此代码
+	// 		}
+				 
+				 
+			switch(opts.event_trigger_type){
+				case 'hover':
+				// alert('hover');
+				//tab 头点击处理
+		  	$(container).find('.i5ting_tab_list li').hover(function(e){
+					// alert(111);
+					opts.current_tab_index = $(this).prevAll().length;
 				
-				console.log(opts.current_index );
+					console.log(opts.current_index );
 				
-	  		$(this).addClass('current').siblings().removeClass('current');
-			  console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
-	  		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-	  	});
-	
+		  		$(this).addClass('current').siblings().removeClass('current');
+				  console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
+		  		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+		  	});
+					break;
+				case 'click':
+				//tab 头点击处理
+		  	$(container).find('.i5ting_tab_list li').click(function(e){
+					// alert(111);
+					opts.current_tab_index = $(this).prevAll().length;
+				
+					console.log(opts.current_index );
+				
+		  		$(this).addClass('current').siblings().removeClass('current');
+				  console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
+		  		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+		  	});
+				default:
+					break;
+				
+			}
+				
 		  
 			i5ting_tab_list_li_hover();
 			
@@ -89,9 +130,10 @@
  
      
   $.fn.i5ting_jquery_tab.defaults = {   
-		current_tab_index: 0, 
+		current_tab_index: 0, //从0开始
 		is_tab_content_btn_show: true, /*显示上下箭头*/
     // fix_height :'200px',  /*如果没有配置fix_height，则自适应*/
+		event_trigger_type:'click', /*现在支持2种类型：  click | hover */
 		    
   };  
 
