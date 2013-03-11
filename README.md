@@ -105,6 +105,34 @@ is_tab_content_btn_show :fase
 
 默认：is_tab_content_btn_show=true
 
+- 增加event_trigger_type:'click', 
+
+/*现在支持2种类型：  click | hover */
+
+- 设置current_tab_index（说明:此设置是把tab_content设置为对应选中，不修改li的原因是，不预制li class=current会导致进入刷新，会闪屏幕的）
+
+```js
+<div class='i5ting_tab_list'> 
+     <ul>
+         <li >
+         	<a href="#">tab说明</a>	
+         </li>
+         <li>
+         	<a href="#">特性</a>
+         </li>
+         <li class="current">
+         	<a href="#">开源协议</a>
+         </li>
+         <li>
+         	<a href="#">源码</a>
+         </li>
+         <li>
+         	<a href="#">张婷作品</a>
+         </li>
+     </ul>
+</div>
+```
+
 ## Examples
 _(Coming soon)_
 
@@ -117,6 +145,8 @@ _(Nothing yet)_
 
 v0.1
 
+- 是否固定显示高度
+- 是否显示tab正文区域是否隐藏按钮
 - 给最后一个li增加last这个css样式
 - 增加event_trigger_type:'click', /*现在支持2种类型：  click | hover */
 - 设置current_tab_index（说明:此设置是把tab_content设置为对应选中，不修改li的原因是，不预制li class=current会导致进入刷新，会闪屏幕的）
