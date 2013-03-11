@@ -83,6 +83,16 @@ $('.wrap2').i5ting_jquery_tab({
 
 ```
 
+使用hover事件触发
+
+```javascript
+$('.wrap2').i5ting_jquery_tab({
+	is_tab_content_btn_show:false,
+	current_tab_index: 2, 
+	event_trigger_type:'hover'
+});
+```
+
 
 ### 配置项说明
 - 是否固定显示高度
@@ -105,7 +115,7 @@ is_tab_content_btn_show :fase
 
 默认：is_tab_content_btn_show=true
 
-- 增加event_trigger_type:'click', 
+- 增加event_trigger_type
 
 /*现在支持2种类型：  click | hover */
 
