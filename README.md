@@ -144,14 +144,12 @@ is_tab_content_btn_show :fase
 ```
 
 ## Examples
-_(Coming soon)_
 
 see example dir.
 
-@see index2.html
+@see index.html
 
 ## Release History
-_(Nothing yet)_
 
 v0.1
 
