@@ -10,7 +10,12 @@
 	
 	.wrap1{width:600px; margin:0 auto;}
 	.wrap2{width:600px; margin:0 auto;}
- 
+	.wrap3{width:600px; margin:0 auto;}
+ 	
+	.wrap3 .i5ting_tab_list_bg{
+		background-color :#f4f4f4;
+	}
+	
 	
 </style>
 <link href="../src/css/i5ting-jquery-tab.css" media="screen" rel="stylesheet" type="text/css">
@@ -153,6 +158,72 @@
     </div>
 	<br/><br/><br/>
 	 
+	<div class="wrap3">
+		li北京
+ 	   <br/><br/><br/><br/>
+	   
+	   <div class='i5ting_tab_list i5ting_tab_list_bg'> 
+	        <ul>
+	            <li class="current">
+	            	<a href="#">门户类似</a>	
+	            </li>
+	            <li>
+	            	<a href="#">视频</a>
+	            </li>
+	            <li>
+	            	<a href="#">电影娱乐</a>
+	            </li>
+	            <li>
+	            	<a href="#">体育</a>
+	            </li>
+	            <li>
+	            	<a href="#">中超国际</a>
+	            </li>
+	        </ul>
+		</div>
+        <div class="i5ting_tab_content">
+            <div class="i5ting_tab_content_item current_content">
+				<br/>
+				i5ting-jquery-tab<br/><br/>
+				<li>1. 传臧天朔出狱上"我是歌手"
+				<li>2. 圈中人曝徐静蕾黄立行秘婚
+				<li>3. 黎明前妻陪莱昂纳多游香港
+				<li>4. 许志安与郑秀文一家吃饭
+				<li>5. 容祖儿男友承认两人过夜
+				
+				
+			</div>
+            <div class="i5ting_tab_content_item">
+				<br/>
+				i5ting-jquery-tab
+				<br/><br/>
+				<p>特性</p>
+				<ol>
+					<li>1. jquery插件，支持配置</li>
+					<li>2. 显示隐藏按钮，可配置</li>
+				</ol>
+				
+			</div>
+            <div class="i5ting_tab_content_item">
+				<br/>
+				apache 2.0
+			</div>
+            <div class="i5ting_tab_content_item">
+				<br/>
+				源码位于
+				<br/>
+				https://github.com/i5ting/i5ting-jquery-tab.git
+			</div>
+            <div class="i5ting_tab_content_item">
+				<br/>
+				作者：张婷
+				<br/>
+				我女朋友，css和js有很多是她写，重构部分是我写的
+			</div>
+        </div>
+	 
+    </div>
+	<br/><br/><br/>
 </body>
 </html>
 
@@ -171,6 +242,12 @@ $(function(){
 	$('.wrap2').i5ting_jquery_tab({
 		is_tab_content_btn_show:false,
 		current_tab_index: 2, 
+		event_trigger_type:'hover'
+	});
+	
+	$('.wrap3').i5ting_jquery_tab({
+		is_tab_content_btn_show:false,
+		current_tab_index: 0, 
 		event_trigger_type:'hover'
 	});
 	

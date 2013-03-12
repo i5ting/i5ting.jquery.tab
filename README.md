@@ -183,6 +183,11 @@ v0.1
 </div>
 ```
 
+v0.2
+-增加li的背景扩展demo
+<div class='i5ting_tab_list i5ting_tab_list_bg'> 
+
+
 ## Refference
 
 - http://www.jb51.net/tools/cssyasuo.shtml
