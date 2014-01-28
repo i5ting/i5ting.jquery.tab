@@ -8,15 +8,13 @@
 
 (function($) {
 
-  
 	function i5ting_tab_list_li_hover(){
 	    //tab 头hover时间处理 
 	  	$(".i5ting_tab_list li").hover(function(){
 	  		$(this).addClass("over");
 	  	},function(){
 	  		$(this).removeClass("over");	
-	  	});
-			
+	  	});		
 	}
 	
 	function tab_content_btn_show_or_hide(container){
@@ -34,12 +32,14 @@
 	function add_tab_content_btn_if_need(container,opts){
 		if(opts.is_tab_content_btn_show){
 			$('<a></a>',
-					{  
-					 	'href'  : "javascript:;",
-						'class' : 'up',
-						'id'    : 'up_sen'
-					}
-			).prependTo( $(container).find('.i5ting_tab_list') );
+				{  
+				 	'href'  : "javascript:;",
+					'class' : 'up',
+					'id'    : 'up_sen'
+				}
+			).prependTo( 
+				$(container).find('.i5ting_tab_list') 
+			);
 		}
 	}
 	
@@ -49,7 +49,7 @@
 		}
 	}
 	
-  $.fn.i5ting_jquery_tab = function(options) {
+  	$.fn.i5ting_jquery_tab = function(options) {
 	  	var opts = $.extend({}, $.fn.i5ting_jquery_tab.defaults, options);  
 		var container = $(this);	
 		//如果is_tab_content_btn_show=yes，则显示上下箭头
@@ -57,9 +57,7 @@
 	
 	    return this.each(function() {
 			opts.current_tab_content = $('.i5ting_tab_content');
-				//$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index );
-				// container = $(this);
-				//$(container).find('.i5ting_tab_list li').eq(opts.current_tab_index).addClass('current');
+			
 			$(container).find('.i5ting_tab_list li').last().addClass('last');
 			
 			$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
@@ -106,11 +104,11 @@
 	
  
      
-  $.fn.i5ting_jquery_tab.defaults = {   
+  	$.fn.i5ting_jquery_tab.defaults = {   
 		current_tab_index: 0, //从0开始
 		is_tab_content_btn_show: true, /*显示上下箭头*/
     	// fix_height :'200px',  /*如果没有配置fix_height，则自适应*/
 		event_trigger_type:'click', /*现在支持2种类型：  click | hover */    
-  };  
+  	};  
 
 }(jQuery));
