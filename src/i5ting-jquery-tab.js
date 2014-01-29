@@ -99,11 +99,9 @@
 			
 			  add_fix_height_if_need(container,opts);
 		
-	  });//end return
-  };//end i5ting_jquery_tab
+	  	});//end return
+  	};//end i5ting_jquery_tab
 	
- 
-     
   	$.fn.i5ting_jquery_tab.defaults = {   
 		current_tab_index: 0, //从0开始
 		is_tab_content_btn_show: true, /*显示上下箭头*/
