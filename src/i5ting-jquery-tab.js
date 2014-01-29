@@ -56,7 +56,7 @@
 		add_tab_content_btn_if_need($(this),opts);
 	
 	    return this.each(function() {
-			opts.current_tab_content = $('.i5ting_tab_content');
+			opts.current_tab_content = $(this).closest('.i5ting_tab_content');
 			
 			$(container).find('.i5ting_tab_list li').last().addClass('last');
 			
