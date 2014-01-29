@@ -51,21 +51,21 @@
 	
   	$.fn.i5ting_jquery_tab = function(options) {
 	  	var opts = $.extend({}, $.fn.i5ting_jquery_tab.defaults, options);  
-		var container = $(this);	
+		// var container = $(this);	
 		//如果is_tab_content_btn_show=yes，则显示上下箭头
 		add_tab_content_btn_if_need($(this),opts);
 	
 	    return this.each(function() {
 			opts.current_tab_content = $(this).closest('.i5ting_tab_content');
 			
-			$(container).find('.i5ting_tab_list li').last().addClass('last');
+			$(this).find('.i5ting_tab_list li').last().addClass('last');
 			
-			$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+			$(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
 			
 			switch(opts.event_trigger_type){
 				case 'hover':
 					//tab 头点击处理
-					 $(container).find('.i5ting_tab_list li').hover(function(e){
+					 $(this).find('.i5ting_tab_list li').hover(function(e){
 				
 					 opts.current_tab_index = $(this).prevAll().length;
 				
@@ -73,12 +73,12 @@
 				
 					  $(this).addClass('current').siblings().removeClass('current');
 						  console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
-					 	  $(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+					 	  $(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
 					  });
 					  break;
 				 case 'click':
 					   //tab 头点击处理
-					   $(container).find('.i5ting_tab_list li').click(function(e){
+					   $(this).find('.i5ting_tab_list li').click(function(e){
 					
 					    opts.current_tab_index = $(this).prevAll().length;
 
@@ -86,7 +86,7 @@
 				
 					  	$(this).addClass('current').siblings().removeClass('current');
 					
-					  	$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+					  	$(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
 				     });
 				  default:
 					  break;
@@ -97,7 +97,7 @@
 
 			  tab_content_btn_show_or_hide($(this));
 			
-			  add_fix_height_if_need(container,opts);
+			  add_fix_height_if_need(this,opts);
 		
 	  	});//end return
   	};//end i5ting_jquery_tab
