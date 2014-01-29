@@ -81,32 +81,36 @@
 	 * public: 事件处理
 	 */
 	function event_process(container,opts){
-		switch(opts.event_trigger_type){
-			case 'hover':
-				//tab 头点击处理
-				$(container).find('.i5ting_tab_list li').hover(function(e){
-				 	opts.current_tab_index = $(this).prevAll().length;
-					// console.log(opts.current_index );
-					$(this).addClass('current').siblings().removeClass('current');
-					console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
-					$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-				});
+		 $(container).find('.i5ting_tab_list li').on(opts.event_trigger_type ,function(e){
+			 // 获取当前tab的index
+			 opts.current_tab_index = $(this).prevAll().length;
+			 
+			 // 当前index样式处理
+			 $.tab_header_changed($(this),opts)
+			 
+			 // 控制tab content显隐
+			 $.tab_content_changed(container,opts)
 				
-				break;
-				
-			 case 'click':
-				 //tab 头点击处理
-				 $(container).find('.i5ting_tab_list li').click(function(e){
-					 opts.current_tab_index = $(this).prevAll().length;
-					 // console.log(opts.current_index );
-					 $(this).addClass('current').siblings().removeClass('current');
-					 $(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-			     });
-				 break;
-				 
-			  default:
-				  break;
-		 }
+			 // 增加回调函数
+			 opts.tab_changed(opts.current_tab_index);
+		 });
+	}
+	
+	/**
+	 * public: 处理tab header变动的公共函数，container_li必须是头部里的li对象
+	 */
+	$.tab_header_changed = function(container_li,opts){
+		// 如果配置项里有opts.fix_height
+		$(container_li).addClass('current').siblings().removeClass('current');
+	}
+	
+	/**
+	 * public: 处理tab content变动的公共函数，container必须是头部里的tab的container对象
+	 */
+	$.tab_content_changed = function(container,opts){
+		// 如果配置项里有opts.fix_height
+		 $(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index )
+		 	.show().siblings().hide();
 	}
 	
 	/**
@@ -145,11 +149,15 @@
 	/**
 	 * 插件默认项
 	 */
-  	$.fn.i5ting_jquery_tab.defaults = {   
+  	$.fn.i5ting_jquery_tab.defaults = {  
+		debug: false, 
 		current_tab_index: 0, //从0开始
 		is_tab_content_btn_show: true, /*显示上下箭头*/
-    	// fix_height :'200px',  /*如果没有配置fix_height，则自适应*/
-		event_trigger_type:'click', /*现在支持2种类型：  click | hover */    
+    	fix_height :'100%',  /*如果没有配置fix_height，则自适应*/
+		event_trigger_type:'click', /*现在支持2种类型：  click | hover */
+		tab_changed:function(current_index){
+			console.log('tab changed current_index=' + current_index);
+		}
   	};  
 
 }(jQuery));

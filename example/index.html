@@ -231,7 +231,9 @@ $(function(){
 	//alert('init');
  
 	$('.wrap1').i5ting_jquery_tab({
-		fix_height :'200px'
+		fix_height :'200px',tab_changed:function(current_index){
+			console.log(current_index);
+		}
 	});
 	
 	$('.wrap2').i5ting_jquery_tab({

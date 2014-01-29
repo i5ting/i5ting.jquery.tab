@@ -1,0 +1,20 @@
+{
+  "name": "tab",
+  "description": "jquery tab",
+  "version": "0.1.0",
+  "homepage": "http://www.no320.com/",
+  "license": "MIT",
+  "copyright": "alfred sang",
+  "main": "i5ting-jquery-tab.js",
+  "dependencies": {
+    "jquery": ">=1.7.2"
+  },
+  "devDependencies": {
+    "css": "*",
+		"js": "*"
+  },
+  "ignore": [
+		"build",
+		"demo"
+  ]
+} 
