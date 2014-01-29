@@ -8,7 +8,7 @@
 
 (function($) {
 
-	function i5ting_tab_list_li_hover(){
+	function _tab_list_li_hover(){
 	    //tab 头hover时间处理 
 	  	$(".i5ting_tab_list li").hover(function(){
 	  		$(this).addClass("over");
@@ -17,7 +17,7 @@
 	  	});		
 	}
 	
-	function tab_content_btn_show_or_hide(container){
+	function _init_tab_content_btn(container){
 		$(container).find('.i5ting_tab_list #up_sen').click(function(){
 			if($(this).hasClass('up')){
 				$(this).removeClass('up').addClass('down');
@@ -29,7 +29,12 @@
 		});
 	}
 	
-	function add_tab_content_btn_if_need(container,opts){
+	function _init_tab_content(container,opts){
+		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item')
+			.eq( opts.current_tab_index ).show().siblings().hide();		
+	}
+	
+	function _add_tab_content_btn_if_need(container,opts){
 		if(opts.is_tab_content_btn_show){
 			$('<a></a>',
 				{  
@@ -37,16 +42,22 @@
 					'class' : 'up',
 					'id'    : 'up_sen'
 				}
-			).prependTo( 
-				$(container).find('.i5ting_tab_list') 
-			);
+			).prependTo( $(container).find('.i5ting_tab_list') );
+			
+			console.log('already show tab control button'+ $(container));
 		}
+		
+		_init_tab_content_btn( $(container) );
 	}
 	
-	function add_fix_height_if_need(container,opts){
+	function _add_fix_height_if_need(container,opts){
 		if(opts.fix_height){
 			$(container).find('.i5ting_tab_content_item').css('height',opts.fix_height);	
 		}
+	}
+	
+	function _add_class_for_last_li(container,opts){
+		$(container).find('.i5ting_tab_list li').last().addClass('last');
 	}
 	
 	function event_process(container,opts){
@@ -79,16 +90,17 @@
 	}
 	
 	function init_tab_ui(container,opts){
+		_tab_list_li_hover();	
+		
 		//如果is_tab_content_btn_show=yes，则显示上下箭头
-		add_tab_content_btn_if_need($(this),opts);
+		_add_tab_content_btn_if_need($(container),opts);
 		
-		$(container).find('.i5ting_tab_list li').last().addClass('last');
+		_add_class_for_last_li($(container),opts);
 		
-		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-		i5ting_tab_list_li_hover();	
-		
-		tab_content_btn_show_or_hide($(container));
-		add_fix_height_if_need($(container),opts);
+		_init_tab_content($(container),opts);
+
+		// 如果配置项里有opts.fix_height
+		_add_fix_height_if_need($(container),opts);
 	}
 	
   	$.fn.i5ting_jquery_tab = function(options) {
