@@ -134,6 +134,38 @@
 	}
 	
 	/**
+	 * public: slide处理
+	 */
+	function tab_slide(container,opts){ 
+		 
+		var container_li = $(container).find('.i5ting_tab_list li.current');
+ 
+		// 获取当前tab的index
+		opts.current_tab_index = $(container_li).prevAll().length;
+		
+		if(opts.current_tab_index == $(container).find('.i5ting_tab_list li').length - 1){
+			opts.current_tab_index = 0;
+			container_li = $(container).find('.i5ting_tab_list li:eq(0)');
+		}else{
+			opts.current_tab_index = opts.current_tab_index + 1;
+			container_li = $(container).find('.i5ting_tab_list li:eq('+ opts.current_tab_index +')');
+		}
+ 
+		// 当前index样式处理
+		$.tab_header_changed($(container_li),opts)
+ 
+		// 控制tab content显隐
+		$.tab_content_changed(container,opts)
+	
+		// 增加回调函数
+		opts.tab_changed(opts.current_tab_index);
+	 
+		setTimeout(function(){
+		 	tab_slide($(container),opts);
+		},opts.slide_time);
+	}
+	
+	/**
 	 * 插件
 	 */
   	$.fn.i5ting_jquery_tab = function(options) {
@@ -142,6 +174,7 @@
 	    return this.each(function() {
 			init_tab_ui($(this) ,opts);
 			event_process($(this) ,opts);
+			tab_slide($(this) ,opts);
 	  	});
 		
   	};//end i5ting_jquery_tab
@@ -155,6 +188,8 @@
 		is_tab_content_btn_show: true, /*显示上下箭头*/
     	fix_height :'100%',  /*如果没有配置fix_height，则自适应*/
 		event_trigger_type:'click', /*现在支持2种类型：  click | hover */
+		is_slide: false, //从0开始
+		slide_time: 2000,
 		tab_changed:function(current_index){
 			console.log('tab changed current_index=' + current_index);
 		}
