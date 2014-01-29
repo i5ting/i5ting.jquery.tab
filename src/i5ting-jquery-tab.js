@@ -49,57 +49,56 @@
 		}
 	}
 	
-  	$.fn.i5ting_jquery_tab = function(options) {
-	  	var opts = $.extend({}, $.fn.i5ting_jquery_tab.defaults, options);  
-		// var container = $(this);	
+	function event_process(container,opts){
+		switch(opts.event_trigger_type){
+			case 'hover':
+				//tab 头点击处理
+				$(container).find('.i5ting_tab_list li').hover(function(e){
+				 	opts.current_tab_index = $(this).prevAll().length;
+					// console.log(opts.current_index );
+					$(this).addClass('current').siblings().removeClass('current');
+					console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
+					$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+				});
+				
+				break;
+				
+			 case 'click':
+				 //tab 头点击处理
+				 $(container).find('.i5ting_tab_list li').click(function(e){
+					 opts.current_tab_index = $(this).prevAll().length;
+					 // console.log(opts.current_index );
+					 $(this).addClass('current').siblings().removeClass('current');
+					 $(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+			     });
+				 break;
+				 
+			  default:
+				  break;
+		 }
+	}
+	
+	function init_tab_ui(container,opts){
 		//如果is_tab_content_btn_show=yes，则显示上下箭头
 		add_tab_content_btn_if_need($(this),opts);
+		
+		$(container).find('.i5ting_tab_list li').last().addClass('last');
+		
+		$(container).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
+		i5ting_tab_list_li_hover();	
+		
+		tab_content_btn_show_or_hide($(container));
+		add_fix_height_if_need($(container),opts);
+	}
+	
+  	$.fn.i5ting_jquery_tab = function(options) {
+	  	var opts = $.extend({}, $.fn.i5ting_jquery_tab.defaults, options);  
 	
 	    return this.each(function() {
-			opts.current_tab_content = $(this).closest('.i5ting_tab_content');
-			
-			$(this).find('.i5ting_tab_list li').last().addClass('last');
-			
-			$(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-			
-			switch(opts.event_trigger_type){
-				case 'hover':
-					//tab 头点击处理
-					 $(this).find('.i5ting_tab_list li').hover(function(e){
-				
-					 opts.current_tab_index = $(this).prevAll().length;
-				
-					  console.log(opts.current_index );
-				
-					  $(this).addClass('current').siblings().removeClass('current');
-						  console.log($('.i5ting_tab_content div.i5ting_tab_content_item'));
-					 	  $(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-					  });
-					  break;
-				 case 'click':
-					   //tab 头点击处理
-					   $(this).find('.i5ting_tab_list li').click(function(e){
-					
-					    opts.current_tab_index = $(this).prevAll().length;
-
-					    console.log(opts.current_index );
-				
-					  	$(this).addClass('current').siblings().removeClass('current');
-					
-					  	$(this).find('.i5ting_tab_content div.i5ting_tab_content_item').eq( opts.current_tab_index ).show().siblings().hide();		
-				     });
-				  default:
-					  break;
-				
-			  }	
-		  
-			  i5ting_tab_list_li_hover();	
-
-			  tab_content_btn_show_or_hide($(this));
-			
-			  add_fix_height_if_need(this,opts);
+			init_tab_ui($(this) ,opts);
+			event_process($(this) ,opts);
+	  	});
 		
-	  	});//end return
   	};//end i5ting_jquery_tab
 	
   	$.fn.i5ting_jquery_tab.defaults = {   
