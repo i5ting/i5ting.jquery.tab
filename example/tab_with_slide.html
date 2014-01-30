@@ -81,9 +81,15 @@
 				<br/>
 				我女朋友，css和js有很多是她写，重构部分是我写的
 			</div>
+			
         </div>
 	 
     </div>
+	current_index =
+	<font size='44' color='red' style='float:right;'>
+		<span id='current_index'></span>
+	</font>
+	
 </body>
 </html>
 
@@ -95,7 +101,11 @@ $(function(){
 	//alert('init');
  
 	$('.wrap1').i5ting_jquery_tab({
-		fix_height :'200px'
+		fix_height :'200px',
+		is_slide: true,
+		print_with_index: function(current_index){
+			$('#current_index').html(current_index + 1);
+		}
 	});
 	
 });

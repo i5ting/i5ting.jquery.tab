@@ -14,4 +14,5 @@
 * 抽出$.tab_header_changed
 * 抽出$.tab_content_changed
 * 自动轮播
+* 给tab绑定hover效果,只有当is_slide=true时才有用
 
