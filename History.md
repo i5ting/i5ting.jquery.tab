@@ -14,5 +14,11 @@
 * 抽出$.tab_header_changed
 * 抽出$.tab_content_changed
 * 自动轮播
+
+
+0.1.2 / 2014-01-30
+==================
+
 * 给tab绑定hover效果,只有当is_slide=true时才有用
+* fix: 点击的时候，调用打印函数
 

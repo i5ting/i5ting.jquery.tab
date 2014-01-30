@@ -112,6 +112,9 @@
 				
 			 // 增加回调函数
 			 opts.tab_changed(opts.current_tab_index);
+			 
+			 // 点击的时候，调用打印函数
+			 _print_with_index(opts);
 		 });
 	}
 	
@@ -162,14 +165,14 @@
 		if(opts.is_slide == false){
 			return;
 		}
-		
 
-		
 		if(opts._changed_count > 0){
-		
+			// 获取container_li对象
 			var container_li = _get_next_tab_container_li(container,opts);
- 
-	 	    opts.print_with_index(opts.current_tab_index);
+			
+			// 点击的时候，调用打印函数
+			_print_with_index(opts);
+			
 			// 当前index样式处理
 			$.tab_header_changed($(container_li),opts)
  
@@ -178,7 +181,6 @@
 	
 			// 增加回调函数
 			opts.tab_changed(opts.current_tab_index);
-	 
 		}
 		
 		setTimeout(function(){
@@ -187,6 +189,17 @@
 		},opts.slide_time);
 	}
 	
+	/**
+	 * private: 点击的时候，调用打印函数
+	 */ 
+	function _print_with_index(opts){
+		// 打印current_tab_index
+ 	    opts.print_with_index(opts.current_tab_index);
+	}
+	
+	/**
+	 * private: 获取container_li对象
+	 */ 
 	function _get_next_tab_container_li(container,opts){
 	 
 		var container_li = $(container).find('.i5ting_tab_list li.current');
@@ -232,6 +245,9 @@
 		event_trigger_type:'click', /*现在支持2种类型：  click | hover */
 		is_slide: false, //从0开始
 		slide_time: 2000,
+		/**
+		 * 当hover的时候，暂停的时间，注意，时间= slide_delay_time_when_hover *slide_time
+		 */ 
 		slide_delay_time_when_hover: 10,
 		tab_changed:function(current_index){
 			console.log('tab changed current_index=' + current_index);
