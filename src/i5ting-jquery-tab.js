@@ -13,7 +13,7 @@
 	 */
 	function _tab_list_li_hover(){
 	    //tab 头hover时间处理 
-	  	$(".i5ting_tab_list li").hover(function(){
+	  	$(".i5ting_tab_header li").hover(function(){
 	  		$(this).addClass("over");
 	  	},function(){
 	  		$(this).removeClass("over");	
@@ -58,9 +58,9 @@
 					'class' : 'up',
 					'id'    : 'up_sen'
 				}
-			).prependTo( $(container).find('.i5ting_tab_list') );
+			).prependTo( $(container).find('.i5ting_tab_header') );
 			
-			$(container).find('.i5ting_tab_list #up_sen').click(function(){
+			$(container).find('.i5ting_tab_header #up_sen').click(function(){
 				if($(this).hasClass('up')){
 					$(this).removeClass('up').addClass('down');
 					$(container).find('.i5ting_tab_content').hide();
@@ -85,7 +85,7 @@
 	 * private: 
 	 */
 	function _add_class_for_last_li(container,opts){
-		$(container).find('.i5ting_tab_list li').last().addClass('last');
+		$(container).find('.i5ting_tab_header li').last().addClass('last');
 	}
 	
 	/**
@@ -100,7 +100,7 @@
 	 * public: 事件处理
 	 */
 	function event_process(container,opts){
-		 $(container).find('.i5ting_tab_list li').on(opts.event_trigger_type ,function(e){
+		 $(container).find('.i5ting_tab_header li').on(opts.event_trigger_type ,function(e){
 			 // 获取当前tab的index
 			 opts.current_tab_index = $(this).prevAll().length;
 			 
@@ -202,17 +202,17 @@
 	 */ 
 	function _get_next_tab_container_li(container,opts){
 	 
-		var container_li = $(container).find('.i5ting_tab_list li.current');
+		var container_li = $(container).find('.i5ting_tab_header li.current');
 
 		// 获取当前tab的index
 		opts.current_tab_index = $(container_li).prevAll().length;
 	
-		if(opts.current_tab_index == $(container).find('.i5ting_tab_list li').length - 1){
+		if(opts.current_tab_index == $(container).find('.i5ting_tab_header li').length - 1){
 			opts.current_tab_index = 0;
-			container_li = $(container).find('.i5ting_tab_list li:eq(0)');
+			container_li = $(container).find('.i5ting_tab_header li:eq(0)');
 		}else{
 			opts.current_tab_index = opts.current_tab_index + 1;
-			container_li = $(container).find('.i5ting_tab_list li:eq('+ opts.current_tab_index +')');
+			container_li = $(container).find('.i5ting_tab_header li:eq('+ opts.current_tab_index +')');
 		}
 		
 		return container_li;
