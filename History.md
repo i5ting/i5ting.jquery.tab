@@ -16,9 +16,12 @@
 * 自动轮播
 
 
-0.1.2 / 2014-01-30
+0.1.2 / 2014-01-30 && 2014-01-31
 ==================
 
 * 给tab绑定hover效果,只有当is_slide=true时才有用
 * fix: 点击的时候，调用打印函数
+* 给tab_content增加padding
+* 增加grunt build settings
+
 
