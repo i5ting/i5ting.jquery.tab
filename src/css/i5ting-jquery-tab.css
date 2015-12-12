@@ -41,7 +41,9 @@
 
 .i5ting_tab_header li.current{
 	background:#fff; 
-	border-top:2px solid #2f82df;
+/* iciba #2f82df;*/
+/* github #d26911;*/
+  border-top:2px solid #d26911;
 	padding-top:1px; 
 	height:32px; 
 	margin-top:0;

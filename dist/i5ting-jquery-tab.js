@@ -1,6 +1,6 @@
-/*! i5ting-jquery-tab - v0.1.0 - 2014-01-30
+/*! i5ting-jquery-tab - v0.1.0 - 2015-11-11
 * https://github.com/i5ting/i5ting-jquery-tab
-* Copyright (c) 2014 i5ting; Licensed MIT */
+* Copyright (c) 2015 i5ting; Licensed MIT */
 (function($) {
 	
 	/**

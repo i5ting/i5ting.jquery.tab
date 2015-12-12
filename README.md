@@ -143,6 +143,25 @@ is_tab_content_btn_show :fase
 </div>
 ```
 
+## 样式修改
+
+- iciba
+- github
+
+自己修改current的border-top即可
+
+```
+.i5ting_tab_header li.current{
+	background:#fff; 
+/* iciba #2f82df;*/
+/* github #d26911;*/
+  border-top:2px solid #d26911;
+	padding-top:1px; 
+	height:32px; 
+	margin-top:0;
+	font-weight:bold;
+}
+```
 ## Examples
 
 see example dir.
